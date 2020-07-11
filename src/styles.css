@@ -1,3 +1,39 @@
-svg {
-	background-color: gray;
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	background-color: rgb(121, 167, 206);
+}
+
+.svg-container {
+	width: 90%;
+	max-width: 960px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.svg-content {
+	background-color: rgb(243, 251, 253);
+	border-radius: 6px;
+	box-shadow: 1px 1px 10px 1px black;
+}
+
+.bar {
+	fill: rgb(130, 192, 228);
+}
+
+.bar:hover {
+	fill: rgb(233, 247, 255);
+}
+
+.tooltip {
+	position: absolute;
+	text-align: center;
+	padding: 10px;
+
+	color: white;
+	background-color: rgb(35, 113, 158);
+	border-radius: 5px;
+	font-size: 0.7em;
 }
