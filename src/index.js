@@ -94,7 +94,7 @@ const renderData = async () => {
 				.style('left', `${d3.event.pageX - 34}px`)
 				.style('top', '60%');
 		})
-		.on('mouseout', function (d) {
+		.on('mouseout', d => {
 			tooltip.transition().duration(200).style('opacity', 0);
 		});
 
