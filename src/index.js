@@ -32,6 +32,7 @@ const renderData = async () => {
 		return `${year} ${quarter} <br /> $${money} Billion`;
 	};
 
+	// Scales
 	const xScale = d3
 		.scaleTime()
 		.domain([
@@ -44,10 +45,6 @@ const renderData = async () => {
 		.scaleLinear()
 		.domain([0, d3.max(dataset, d => d[1])])
 		.range([h - padding, padding]);
-
-	const xAxis = d3.axisBottom(xScale);
-
-	const yAxis = d3.axisLeft(yScale);
 
 	// SVG Container
 	const svg = d3
@@ -99,6 +96,8 @@ const renderData = async () => {
 		});
 
 	// x-axis
+	const xAxis = d3.axisBottom(xScale);
+
 	svg
 		.append('g')
 		.attr('id', 'x-axis')
@@ -115,6 +114,8 @@ const renderData = async () => {
 		.text('Year');
 
 	// y-axis
+	const yAxis = d3.axisLeft(yScale);
+
 	svg
 		.append('g')
 		.attr('id', 'y-axis')
