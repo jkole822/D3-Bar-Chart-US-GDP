@@ -83,16 +83,16 @@ const renderData = async () => {
 		.attr('y', d => yScale(d[1]))
 		.attr('width', 3)
 		.attr('height', d => h - yScale(d[1]) - padding)
-		.on('mouseover', d => {
-			tooltip.transition().duration(200).style('opacity', 0.9);
+		.on('mousemove', d => {
+			tooltip.transition().style('opacity', 0.9);
 			tooltip
 				.html(renderTooltip(d[0], d[1]))
 				.attr('data-date', d[0])
-				.style('left', `${d3.event.pageX - 34}px`)
-				.style('top', '60%');
+				.style('left', `${d3.event.pageX}px`)
+				.style('top', `${d3.event.pageY + 30}px`);
 		})
 		.on('mouseout', d => {
-			tooltip.transition().duration(200).style('opacity', 0);
+			tooltip.transition().style('opacity', 0);
 		});
 
 	// x-axis
